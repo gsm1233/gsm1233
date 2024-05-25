@@ -7,30 +7,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Test de Dactylographie</h1>
-        <label for="duration">Choisissez la durée du test :</label>
-        <select id="duration">
-            <option value="3">3 minutes</option>
-            <option value="5">5 minutes</option>
-            <option value="10">10 minutes</option>
-            <option value="15">15 minutes</option>
-        </select>
-        <button id="start-button">Commencer le test</button>
-        <div id="typing-area" class="hidden">
-            <div id="text-to-type-container">
-                <p id="text-to-type" class="transparent-text"></p>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Test de Dactylographie</a></li>
+                <li><a href="lessons.html">Leçons de Dactylographie</a></li>
+                <li><a href="about.html">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Test de Dactylographie</h1>
+            <label for="duration">Choisissez la durée du test :</label>
+            <select id="duration">
+                <option value="3">3 minutes</option>
+                <option value="5">5 minutes</option>
+                <option value="10">10 minutes</option>
+                <option value="15">15 minutes</option>
+            </select>
+            <button id="start-button">Commencer le test</button>
+            <div id="typing-area" class="hidden">
+                <div id="text-to-type-container">
+                    <p id="text-to-type" class="transparent-text"></p>
+                </div>
+                <textarea id="user-input" placeholder="Tapez ici..."></textarea>
+                <p id="timer">Temps restant : <span id="time-left"></span></p>
             </div>
-            <textarea id="user-input" placeholder="Tapez ici..."></textarea>
-            <p id="timer">Temps restant : <span id="time-left"></span></p>
+            <div id="results" class="hidden">
+                <h2>Résultats</h2>
+                <p>Vitesse : <span id="wpm"></span> mots par minute</p>
+                <p>Précision : <span id="accuracy"></span>%</p>
+                <button id="restart-button">Refaire un test</button>
+            </div>
         </div>
-        <div id="results" class="hidden">
-            <h2>Résultats</h2>
-            <p>Vitesse : <span id="wpm"></span> mots par minute</p>
-            <p>Précision : <span id="accuracy"></span>%</p>
-            <button id="restart-button">Refaire un test</button>
-        </div>
-    </div>
+    </main>
+    <footer>
+        <p>Nom de l'entreprise | Email: info@entreprise.com | Téléphone: 0123-456-789</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
