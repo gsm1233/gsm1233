@@ -16,4 +16,36 @@ let interval;
 function startTest() {
     const duration = document.getElementById('duration').value;
     testDuration = duration * 60; // Convertir les minutes en secondes
-    document.get
+
+    // Afficher le texte correspondant à la durée choisie
+    document.getElementById('text').textContent = texts[duration];
+
+    // Démarrer le timer
+    startTime = Date.now();
+    timer = setInterval(updateTimer, 1000);
+
+    // Désactiver le bouton de démarrage
+    document.getElementById('start-button').disabled = true;
+}
+
+function updateTimer() {
+    const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+    const remainingTime = testDuration - elapsedTime;
+
+    // Mettre à jour l'affichage du temps restant
+    const minutes = Math.floor(remainingTime / 60);
+    const seconds = remainingTime % 60;
+    document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+    // Vérifier si le temps est écoulé
+    if (remainingTime <= 0) {
+        clearInterval(timer);
+        document.getElementById('start-button').disabled = false; // Réactiver le bouton de démarrage
+    }
+}
+
+function restartTest() {
+    clearInterval(timer);
+    document.getElementById('timer').textContent = '';
+    document.getElementById('start-button').disabled = false;
+}
