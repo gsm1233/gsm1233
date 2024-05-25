@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Dactylographie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Test de Dactylographie</h1>
+        <label for="duration">Choisissez la durée du test :</label>
+        <select id="duration">
+            <option value="3">3 minutes</option>
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="15">15 minutes</option>
+        </select>
+        <button id="start-button">Commencer le test</button>
+        <div id="typing-area" class="hidden">
+            <p id="text-to-type">Le texte apparaîtra ici...</p>
+            <textarea id="user-input" placeholder="Tapez ici..."></textarea>
+            <p id="timer">Temps restant : <span id="time-left"></span></p>
+        </div>
+        <div id="results" class="hidden">
+            <h2>Résultats</h2>
+            <p>Vitesse : <span id="wpm"></span> mots par minute</p>
+            <p>Précision : <span id="accuracy"></span>%</p>
+            <button id="restart-button">Refaire un test</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
