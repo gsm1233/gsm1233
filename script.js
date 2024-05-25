@@ -11,10 +11,9 @@ const texts = {
 let timer;
 let startTime;
 let testDuration;
-let interval;
 
 function startTest() {
-    const duration = document.getElementById('duration').value;
+    const duration = parseInt(document.getElementById('duration').value);
     testDuration = duration * 60; // Convertir les minutes en secondes
 
     // Afficher le texte correspondant à la durée choisie
